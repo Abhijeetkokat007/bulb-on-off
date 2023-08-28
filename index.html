@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light</title>
+    <script src="https://kit.fontawesome.com/61d1b80f50.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .img-off{
+        height: 450px;
+        margin:20px auto;
+        display: block
+    }
+    .btn-cont{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .btn-on{
+        width: 100px;
+        padding: 5px;
+        margin-top: 20px;
+        background-color: white;
+        border: 2px solid rgb(238, 150, 20);
+        color: rgb(238, 150, 20);
+        border-radius: 5px;
+        backface-visibility: hidden;
+    }
+   
+    .b-dark{
+        background-color: rgb(41, 39, 39);
+        color: white;
+    }
+    .b-light{
+        background-color: white;
+        color: black;
+    }
+    .heding{
+        text-align: center;
+        color: rgb(238, 150, 20);
+    }
+</style>
+<body class="b-dark" id="body">
+    <div class="btn-cont">
+        <button class="btn-on" id="btn-on" onclick=" darktheme()">dark</button>
+        <button class="btn-on" id="btn-on" onclick="lighttheme()">light</button>
+        
+    </div>
+    <h1 class="heding">Light ON/OFF</h1>
+    <img class="img-off" id="img-off" src="./bulboff.png"/>
+
+    <div class="btn-cont">
+        <button class="btn-on" id="btn-on" onclick=" onbulb()">ON</button>
+        <button class="btn-on" id="btn-on" onclick=" offbulb()">OFF</button>
+    </div>
+
+    
+   
+
+    <script>
+        function darktheme(){
+            const bodyelement =document.getElementById("body");
+            bodyelement.classList.remove('b-light');
+            bodyelement.classList.add('b-dark');
+        }
+        function lighttheme(){
+            const bodyelement =document.getElementById("body");
+            bodyelement.classList.remove('b-dark');
+            bodyelement.classList.add('b-light');
+        }
+        
+        function onbulb(){
+            const onbulb =document.getElementById("img-off");
+           onbulb.src = "./bulbon.png";
+        }
+        function offbulb(){
+            const onbulb =document.getElementById("img-off");
+           onbulb.src = "./bulboff.png";
+        }
+
+       
+
+
+    </script>
+</body>
+</html> 
